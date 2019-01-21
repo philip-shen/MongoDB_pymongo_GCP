@@ -8,6 +8,7 @@ Install MongoDB on Google Clound Platform(GCP) then mainpulation with pymongo
 
 
 * Step 1
+
 Import public key for package managemnet systerm
 
 ```
@@ -15,7 +16,9 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF50
 ``` 
 
 * Step 2
+
 Establish a list file 
+
 Ubuntu 16.04
 ``` 
 echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
@@ -27,6 +30,7 @@ sudo apt-get update
 ``` 
 
 * Step 4 
+
 Install MongoDB
 
 ``` 
@@ -50,6 +54,7 @@ echo "mongodb-org-tools hold" | sudo dpkg --set-selections
 ``` 
 
 * Step 5
+
 Excute MongoDB
 
 ``` 
@@ -75,6 +80,7 @@ sudo service mongod restart
 ``` 
 
 * Step 6
+
 Setup database users and assign them roles
 
 Open up mongo shell
@@ -97,6 +103,7 @@ Inside mongo shell access the admin database. Create a new admin user.
 ``` 
 
 * Step 7
+
 Enable MongoDB Auth and open MongoDB access up to all IPs
 
 sudo nano /etc/mongod.conf
@@ -126,6 +133,7 @@ ubuntu:~$ mongo -u admin -p myadminpassword 127.0.0.1/admin
 ``` 
 
 * Step 8
+
 Edit firewall rule to allow port 27017 to access MongoDB
 VPC network---> Firewall rules---> Create Firewall rule---> Edit---> Save
 
@@ -142,9 +150,11 @@ Test connection to your remote MongoDB server
 ![alt tag](https://i.imgur.com/FvEJCVu.jpg)
 
 Press "!Test" buttion to test connection
+
 ![alt tag](https://i.imgur.com/KR3FWjH.jpg)
 
 * Step 10
+
 Using pymongo to connect with your remote MongoDB server
 
 First,
