@@ -1,8 +1,8 @@
-# MongoDB_pymongo_GCP
+MongoDB_pymongo_GCP
 ==============================
 Install MongoDB on Google Clound Platform(GCP) then mainpulation with pymongo
 
-## Implementation
+Implementation
 ==============================
 * [在Ubuntu 16.04上安裝、使用、解除安裝MongoDB](https://www.itread01.com/content/1545355444.html)
 * [Setting up and connecting to a remote MongoDB database](https://medium.com/founding-ithaka/setting-up-and-connecting-to-a-remote-mongodb-database-5df754a4da89)
@@ -167,10 +167,10 @@ Under python console
 ![alt tag](https://i.imgur.com/6kB4uKn.jpg)
 
 
-## Troubleshooting
+Troubleshooting
 ==============================
 
-## Environment Configuration
+Environment Configuration
 ==============================
 ``` 
 o Ubuntu 16.04.5 LTS (GNU/Linux 4.15.0-1026-gcp x86_64)。
@@ -180,7 +180,7 @@ o Python 3.6。
 ``` 
 
 
-## Reference 
+Reference 
 ==============================
 * [Install MongoDB Community Edition on Ubuntu](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/#install-mongodb-community-edition)
 * [MongoDB (1) 安装（apt-get）及使用(4.0.0版)](https://konfido.github.io/2018/07/13/MongoDB-1-install/)
