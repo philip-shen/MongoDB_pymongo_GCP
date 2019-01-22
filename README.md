@@ -134,6 +134,13 @@ Try to access the mongo shell by simply typing mongo in the terminal
 ubuntu:~$ mongo -u admin -p myadminpassword 127.0.0.1/admin
 ``` 
 
+Enable MongoDB after Reboot
+
+```  	
+$ sudo systemctl enable mongod
+``` 
+
+
 * Step 8
 
 Edit firewall rule to allow port 27017 to access MongoDB
@@ -200,6 +207,9 @@ Reference
 
 * [Robomongo — 好用的 MongoDB GUI manager](https://medium.com/@wilsonhuang/robomongo-%E5%A5%BD%E7%94%A8%E7%9A%84-mongodb-gui-manager-87508da806e5)
 * [Taking a Look at Robomongo and Studio 3T with Compose for MongoDB](https://www.compose.com/articles/taking-a-look-at-robomongo-and-studio-3t-with-compose-for-mongodb/)
+
+* [Ubuntu16.04 中 mongodb 怎么设置开机启动](https://blog.csdn.net/a727911438/article/details/80464124)
+* [Ubuntu 16.04 安装 MongoDB 开机自启](http://blog.topspeedsnail.com/archives/4820)
 
 * []()
 ![alt tag]()
