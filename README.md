@@ -108,6 +108,8 @@ Inside mongo shell access the admin database. Create a new admin user.
 
 Enable MongoDB Auth and open MongoDB access up to all IPs
 
+Once your admin is setup and database specific users have been created, it is now time to enable MongoDB to start using these access controls. 
+
 sudo nano /etc/mongod.conf
 ``` 
 # network interfaces
