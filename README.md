@@ -1,52 +1,61 @@
-MongoDB_pymongo_GCP
-==============================
-Install MongoDB on Google Clound Platform(GCP) then mainpulation with pymongo
 
-Implementation
-==============================
+# MongoDB_pymongo_GCP  
+Install MongoDB on Google Clound Platform(GCP) then mainpulation with pymongo  
+
+# Table of Contents
+[]()  
+[]()  
+[]()  
+[]()  
+[]()  
+[]()  
+[]()  
+[]()  
+[]()  
+[]()  
+[]()  
+[]()  
+[]()  
+
+# Implementation  
+
 * [在Ubuntu 16.04上安裝、使用、解除安裝MongoDB](https://www.itread01.com/content/1545355444.html)
 * [Setting up and connecting to a remote MongoDB database](https://medium.com/founding-ithaka/setting-up-and-connecting-to-a-remote-mongodb-database-5df754a4da89)
 * [How to connect to your remote MongoDB server](https://ianlondon.github.io/blog/mongodb-auth/)
 
 
-* Step 1
-
-Import public key for package managemnet systerm
+## Step 1  
+### Import public key for package managemnet systerm    
 
 ```
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
 ``` 
 
-* Step 2
-
-Establish a list file 
+## Step 2  
+### Establish a list file    
 
 Ubuntu 16.04
 ``` 
 echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
 ``` 
 
-* Step 3
+## Step 3  
 ``` 
 sudo apt-get update
 ``` 
 
-* Step 4 
-
-Install MongoDB
-
+## Step 4   
+### Install MongoDB  
 ``` 
 sudo apt-get install -y mongodb-org
 ``` 
 
-Specify MongoDB version
-
+### Specify MongoDB version  
 ``` 
 sudo apt-get install -y mongodb-org=3.6.0 mongodb-org-server=3.6.0 mongodb-org-shell=3.6.0 mongodb-org-mongos=3.6.0 mongodb-org-tools=3.6.0
 ``` 
 
-Fix MongoDB version
-
+### Fix MongoDB version  
 ``` 
 echo "mongodb-org hold" | sudo dpkg --set-selections
 echo "mongodb-org-server hold" | sudo dpkg --set-selections
@@ -55,42 +64,37 @@ echo "mongodb-org-mongos hold" | sudo dpkg --set-selections
 echo "mongodb-org-tools hold" | sudo dpkg --set-selections
 ``` 
 
-* Step 5
-
-Excute MongoDB
+## Step 5  
+### Excute MongoDB  
 
 ``` 
 sudo service mongod start
 ``` 
 
-Verify MongoDB opertaion to check content of /var/log/mongodb/mongod.log
-
+### Verify MongoDB opertaion to check content of /var/log/mongodb/mongod.log  
 ``` 
 [initandlisten] waiting for connections on port 27017
 ``` 
 
-Stop MongoDB
-
+### Stop MongoDB  
 ``` 
 sudo service mongod stop
 ``` 
 
-Restart MongoDB
-
+### Restart MongoDB  
 ``` 
 sudo service mongod restart
 ``` 
 
-* Step 6
+## Step 6  
+### Setup database users and assign them roles  
 
-Setup database users and assign them roles
-
-Open up mongo shell
+### Open up mongo shell  
 ``` 
 $ mongo
 ``` 
 
-Inside mongo shell access the admin database. Create a new admin user.
+### Inside mongo shell access the admin database. Create a new admin user.  
 ``` 
 > use admin;
 > db.createUser({
@@ -104,13 +108,12 @@ Inside mongo shell access the admin database. Create a new admin user.
   });
 ``` 
 
-* Step 7
+## Step 7  
+### Enable MongoDB Auth and open MongoDB access up to all IPs  
 
-Enable MongoDB Auth and open MongoDB access up to all IPs
+> Once your admin is setup and database specific users have been created, it is now time to enable MongoDB to start using these access controls.   
 
-Once your admin is setup and database specific users have been created, it is now time to enable MongoDB to start using these access controls. 
-
-sudo nano /etc/mongod.conf
+sudo nano /etc/mongod.conf  
 ``` 
 # network interfaces
 net:
@@ -123,64 +126,56 @@ security:
     authorization: 'enabled'
 ``` 
 
-Restart MongoDB
+### Restart MongoDB  
 
 ``` 
 sudo service mongod restart
 ``` 
 
-Try to access the mongo shell by simply typing mongo in the terminal
-
+### Try to access the mongo shell by simply typing mongo in the terminal  
 ``` 
 # to access the admin database
 ubuntu:~$ mongo -u admin -p myadminpassword 127.0.0.1/admin
 ``` 
 
-Enable MongoDB after Reboot
-
+### Enable MongoDB after Reboot  
 ```  	
 $ sudo systemctl enable mongod
 ``` 
 
 
-* Step 8
-
-Edit firewall rule to allow port 27017 to access MongoDB
-VPC network---> Firewall rules---> Create Firewall rule---> Edit---> Save
+## Step 8  
+### Edit firewall rule to allow port 27017 to access MongoDB  
+> VPC network---> Firewall rules---> Create Firewall rule---> Edit---> Save
 
 ![alt tag](https://i.imgur.com/iu9G0sr.jpg)
 
-* Step 9
-Connect to your remote MongoDB server
+## Step 9  
+### Connect to your remote MongoDB server  
 
 [Download Robo 3T (formerly Robomongo)](https://robomongo.org/)
 
-Test connection to your remote MongoDB server
-![alt tag](https://i.imgur.com/tMPuuYc.jpg)
+### Test connection to your remote MongoDB server  
+![alt tag](https://i.imgur.com/tMPuuYc.jpg)  
+![alt tag](https://i.imgur.com/FvEJCVu.jpg)  
 
-![alt tag](https://i.imgur.com/FvEJCVu.jpg)
+### Press "!Test" buttion to test connection  
+![alt tag](https://i.imgur.com/KR3FWjH.jpg)  
 
-Press "!Test" buttion to test connection
+## Step 10  
+### Using pymongo to connect with your remote MongoDB server  
 
-![alt tag](https://i.imgur.com/KR3FWjH.jpg)
-
-* Step 10
-
-Using pymongo to connect with your remote MongoDB server
-
-First,
+### First,  
 ``` 
 pip install pymongo
 ``` 
-Under python console
+### Under python console  
 ![alt tag](https://i.imgur.com/6kB4uKn.jpg)
 
 
-Troubleshooting
-==============================
+# Troubleshooting  
 
-Environment Configuration
-==============================
+# Environment Configuration  
 ``` 
 o Ubuntu 16.04.5 LTS (GNU/Linux 4.15.0-1026-gcp x86_64)。
 o MongoDB 3.6。
@@ -189,8 +184,7 @@ o Python 3.6。
 ``` 
 
 
-Reference 
-==============================
+# Reference   
 * [Install MongoDB Community Edition on Ubuntu](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/#install-mongodb-community-edition)
 * [MongoDB (1) 安装（apt-get）及使用(4.0.0版)](https://konfido.github.io/2018/07/13/MongoDB-1-install/)
 * [MongoDB (2) 创建用户及密码(授权)](https://konfido.github.io/2018/07/14/MongoDB-2-auth/)
