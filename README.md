@@ -203,6 +203,9 @@ pip install pymongo
 
 
 # Troubleshooting  
+## HDriver Usage 100%  
+![alt tag](https://i.imgur.com/xI3GD9b.jpg)  
+[Adding or Resizing Zonal Persistent Disks](https://github.com/philip-shen/GCP_lmplementation#adding-or-resizing-zonal-persistent-disks)  
 
 # Environment Configuration  
 ``` 
